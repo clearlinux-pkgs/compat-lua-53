@@ -1,0 +1,1 @@
+linux MYCFLAGS="${CFLAGS} -fpic -DLUA_COMPAT_5_2 -DLUA_COMPAT_5_1" MYLDFLAGS="${CFLAGS}" MYLIBS="-lncurses -lm"

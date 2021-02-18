@@ -1,0 +1,2 @@
+alias = lua
+regex = ^5\.3\.[0-9]+

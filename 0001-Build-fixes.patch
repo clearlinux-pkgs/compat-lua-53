@@ -1,4 +1,4 @@
-From 5eb0f4552a85f6ba79d7bf8421e1a79772bf19a8 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Auke Kok <auke-jan.h.kok@intel.com>
 Date: Mon, 13 Feb 2017 13:41:31 -0800
 Subject: [PATCH] Build fixes
@@ -90,7 +90,7 @@ index a2820e0..f398ec4 100644
  # (end of Makefile)
 diff --git a/lua53.pc b/lua53.pc
 new file mode 100644
-index 0000000..08d0e36
+index 0000000..2de7936
 --- /dev/null
 +++ b/lua53.pc
 @@ -0,0 +1,11 @@
@@ -149,6 +149,3 @@ index 9eeeea6..2a7deef 100644
  #define LUA_LDIR	LUA_ROOT "share/lua/" LUA_VDIR "/"
  #define LUA_CDIR	LUA_ROOT "lib/lua/" LUA_VDIR "/"
  #define LUA_PATH_DEFAULT  \
--- 
-2.30.1
-

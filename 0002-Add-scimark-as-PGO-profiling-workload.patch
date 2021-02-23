@@ -5,16 +5,16 @@ Subject: [PATCH] Add scimark as PGO profiling workload
 
 Signed-off-by: Guobing Chen <guobing.chen@intel.com>
 ---
- scimark.lua | 425 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 425 insertions(+)
+ scimark.lua | 424 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 424 insertions(+)
  create mode 100644 scimark.lua
 
 diff --git a/scimark.lua b/scimark.lua
 new file mode 100644
-index 0000000..baa5c64
+index 0000000..e51aa38
 --- /dev/null
 +++ b/scimark.lua
-@@ -0,0 +1,425 @@
+@@ -0,0 +1,424 @@
 +------------------------------------------------------------------------------
 +-- Lua SciMark (2010-12-20).
 +--
@@ -439,4 +439,3 @@ index 0000000..baa5c64
 +end
 +printf("\nSciMark %8.2f  [%s problem sizes]\n", sum / #benchmarks, SIZE_SELECT)
 +io.flush()
-+

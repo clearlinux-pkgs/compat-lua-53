@@ -8,12 +8,22 @@ Subject: [PATCH] Build fixes
 
 Signed-off-by: Karthik Prabhu Vinod <karthik.prabhu.vinod@intel.com>
 --------------------------------------------------------------------
+
+--------------------------------------------------------------------
+2021-02-22: Fix lua53.pc for static linking: The -L option requires a
+directory value instead, so use `-L${libdir}`. Additionally, specify the
+`-llua5.3` linker flag, which will unambiguously resolve to liblua5.3.a,
+since a liblua5.3.so is not provided. Finally, add Libs.private entries
+for additional libraries needed to statically link to liblua5.3.
+
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
+--------------------------------------------------------------------
 ---
  Makefile      | 21 ++++++++++++---------
- lua53.pc      | 11 +++++++++++
+ lua53.pc      | 12 ++++++++++++
  src/Makefile  |  6 +++++-
  src/luaconf.h |  2 +-
- 4 files changed, 29 insertions(+), 11 deletions(-)
+ 4 files changed, 30 insertions(+), 11 deletions(-)
  create mode 100644 lua53.pc
 
 diff --git a/Makefile b/Makefile
@@ -91,10 +101,10 @@ index a2820e0..f398ec4 100644
  # (end of Makefile)
 diff --git a/lua53.pc b/lua53.pc
 new file mode 100644
-index 0000000..2de7936
+index 0000000..d5ba4c3
 --- /dev/null
 +++ b/lua53.pc
-@@ -0,0 +1,11 @@
+@@ -0,0 +1,12 @@
 +prefix = /usr
 +exec_prefix = ${prefix}
 +libdir = /usr/lib64
@@ -104,7 +114,8 @@ index 0000000..2de7936
 +Name: Lua53
 +Description: An Extensible Extension Language
 +Requires:
-+Libs: -L/usr/lib64/liblua5.3.a
++Libs: -L${libdir} -llua5.3
++Libs.private: -ldl -lm
 +Cflags: -I${includedir}
 diff --git a/src/Makefile b/src/Makefile
 index a13afb9..e58a9cd 100644

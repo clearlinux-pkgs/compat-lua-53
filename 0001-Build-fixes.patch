@@ -3,8 +3,9 @@ From: Auke Kok <auke-jan.h.kok@intel.com>
 Date: Mon, 13 Feb 2017 13:41:31 -0800
 Subject: [PATCH] Build fixes
 
--------------------------------------------------------------------
-Refacoring 0001-Build-fixes.patch
+--------------------------------------------------------------------
+2021-02-17: Refactoring 0001-Build-fixes.patch
+
 Signed-off-by: Karthik Prabhu Vinod <karthik.prabhu.vinod@intel.com>
 --------------------------------------------------------------------
 ---
